@@ -63,9 +63,9 @@ Document Classification with OCR and BERT is a project aimed at automatically ca
 6. **Label Imbalance**:
     - classes might not be balanced, leading to biased models.
         - **Remedy**: Assign higher weights to minority classes during loss calculation to penalize misclassifications of minority classes more.
-        
-
-Feel free to customize the README.md file further to include additional sections, such as Acknowledgments, Troubleshooting, or Contributing guidelines, based on the needs of your project and the intended audience of your GitHub repository.
+7. **Python Version Difference**:
+    - Incompatible Python version to load the pretrained model for serving.
+        - **Remedy**: Use the correct Python Version for model training and model loading. 
 
 ### Data Source
 [Kaggle](https://www.kaggle.com/datasets/ritvik1909/document-classification-dataset)
