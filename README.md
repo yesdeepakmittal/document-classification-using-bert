@@ -37,6 +37,34 @@ Document Classification with OCR and BERT is a project aimed at automatically ca
 - **Train the model using Jupyter Notebook**
 - **Build a FastAPI/Flask Application for Model Serving**
 
+### Challenges & Remedies
+
+1. **Computational**:
+    - Training a BERT model trains well if we have a dedicated GPU.
+        - **Remedy**: Utilized the GPU in Google Colab
+    - Preprocessing text of a single document require at least 30 seconds making it infeasible working with 1000s of document
+        - **Remedy**: Run the preprocessing task at More Core processor and save the processed text as a .txt file.
+2. **OCR Engine Performance**:
+    - Input to the model is the text which is extracted using OCR Engine. The more accurate the OCR Engine is, the better the model fine-tuning will be.
+        - **Remedy**: Premium OCR Engine like Google Vision OCR performs well and give the result faster as compare to Tesseract OCR Engine which is used in this project.
+
+3. **Data Quality & Quantity**:
+    - BERT models require large amounts of data for effective training, and obtaining a substantial, well-labeled dataset can be challenging, especially for specific domains.
+        - **Remedy**:
+            - **Data Augmentation**: Apply techniques such as synonym replacement to artificially increase the size of your dataset.
+            - **Domain-Specific Pretraining**: Consider using domain-specific pretrained BERT models.
+4. **Training Challenges**:
+    - Training large transformer models like BERT can be time-consuming, especially if the dataset is vast and the model architecture is complex.
+        - **Remedy**:
+            - **Gradient Accumulation**: simulate training with larger batch sizes without increasing GPU memory requirements significantly.
+5. **Fine-Tuning Challenges**:
+    - Finding the optimal learning rate, batch size, and number of epochs for fine-tuning BERT can be challenging and time-consuming.
+        - **Remedy**: Hyperparameter Tuning with multiple values & Early Stopping.
+6. **Label Imbalance**:
+    - classes might not be balanced, leading to biased models.
+        - **Remedy**: Assign higher weights to minority classes during loss calculation to penalize misclassifications of minority classes more.
+        
+
 Feel free to customize the README.md file further to include additional sections, such as Acknowledgments, Troubleshooting, or Contributing guidelines, based on the needs of your project and the intended audience of your GitHub repository.
 
 ### Data Source
