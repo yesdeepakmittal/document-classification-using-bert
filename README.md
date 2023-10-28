@@ -1,6 +1,8 @@
 # Document Classification with OCR and BERT
 ### Overview
-Document Classification with OCR and BERT is a project aimed at automatically categorizing textual images into predefined classes. This repository contains the code and resources necessary to train a powerful document classification model leveraging Optical Character Recognition (OCR) and the Bidirectional Encoder Representations from Transformers (BERT) algorithm.
+Document Classification with OCR and BERT is a project aimed at automatically categorizing textual images into predefined classes. This repository contains the code and resources necessary to train a powerful document classification model leveraging Optical Character Recognition (OCR) and the Bidirectional Encoder Representations from Transformers (BERT) algorithm. The model is deployed using FastAPI and Docker. 
+
+![image](./modeling_service/samples/doc_app.png)
 
 ### Project Highlights
 - **Automated Document Classification**: Classify textual images into categories without manual intervention, enabling efficient sorting and organization of large document datasets.
@@ -26,16 +28,17 @@ Document Classification with OCR and BERT is a project aimed at automatically ca
   - Predictions enable automated sorting and organization of documents based on their content.
 
 ### Prerequisites
-  - Python 3.x
-  - Libraries: transformers, torch, pytesseract, PIL
+  - Python 3.x (Mine - Python 3.10.12 in Ubuntu 22.04)
+  - Libraries: transformers, torch, pytesseract, PIL, FastAPI, Gradio
   - Tesseract OCR Installed
+  - Docker
 
 ### Usage
 - **Clone the Repository**:
 ```git clone https://github.com/yesdeepakmittal/document-classification-using-bert.git```
-
+- **Make a virtual environment and install all the libraries mentioned in `requirements.txt` file**
 - **Train the model using Jupyter Notebook**
-- **Build a FastAPI/Flask Application for Model Serving**
+- **Serve the model using FastAPI and Deploy using Docker**
 
 ### Challenges & Remedies
 

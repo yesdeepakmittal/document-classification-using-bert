@@ -8,7 +8,7 @@ from modeling_service.utils.ocr import get_text
 
 app = FastAPI()
 
-@app.post("/convert_image")
+@app.post("/classify_image")
 async def make_prediction(request: Request):
     try:
         input_json: Dict = eval((await request.body()).decode())
@@ -22,13 +22,14 @@ async def make_prediction(request: Request):
         
         # Get preprocessed text
         preprocessed_text = preprocess_text(text)
-        print(preprocessed_text)
 
         # Predict the document class
-        # predicted_class = predict_document_class(preprocessed_text)
-        # print(predicted_class)
-        
+        predicted_class = predict_document_class(preprocessed_text)
+        print(predicted_class)
+
+        return {"predicted_class": predicted_class}
     except:
         print("Exception hit!!")
+        return {"predicted_class": "Error"}
 
     
